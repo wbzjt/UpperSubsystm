@@ -9,7 +9,7 @@
 
 #include "Constants.h"
 #include "subsystems/ExampleSubsystem.h"
-#include "subsystems/UpperSubsystem.h"
+#include "subsystems/ElevatorSubsystem.h"
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -30,11 +30,12 @@ class RobotContainer {
       OperatorConstants::kDriverControllerPort};
 
   // The robot's subsystems are defined here...
-  frc::XboxController m_joystick{0};
+    frc2::CommandXboxController m_joystick{0};
+
 
   
   ExampleSubsystem m_subsystem;
-  UpperSubsystem m_upperSubsystem;
+  ElevatorSubsystem m_elevatorSubsystem;
 
 
 

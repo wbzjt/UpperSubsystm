@@ -9,7 +9,7 @@
 #include "commands/Autos.h"
 #include "commands/ExampleCommand.h"
 
-RobotContainer::RobotContainer() : m_upperSubsystem(m_joystick)  {
+RobotContainer::RobotContainer() : m_elevatorSubsystem(m_joystick)  {
   // Initialize all of your commands and subsystems here
 
   // Configure the button bindings
@@ -28,19 +28,19 @@ void RobotContainer::ConfigureBindings() {
   // pressed, cancelling on release.
   m_driverController.B().WhileTrue(m_subsystem.ExampleMethodCommand());
 
-  m_upperSubsystem.SetDefaultCommand(m_upperSubsystem.TeleopControlCommand());
+  // m_upperSubsystem.SetDefaultCommand(m_upperSubsystem.TeleopControlCommand());
 
-  frc2::Trigger([this] {
-    return m_joystick.GetYButton();
-  }).OnTrue(m_upperSubsystem.AutoCatchCommand());  
+  // frc2::Trigger([this] {
+  //   return m_joystick.GetYButton();
+  // }).OnTrue(m_upperSubsystem.AutoCatchCommand());  
 
-  frc2::Trigger([this] {return m_joystick.GetAButton();}).OnTrue(
-    m_upperSubsystem.AutoPutCommand()
-  );
+  // frc2::Trigger([this] {return m_joystick.GetAButton();}).OnTrue(
+  //   m_upperSubsystem.AutoPutCommand()
+  // );
 
-    frc2::Trigger([this] {return m_joystick.GetBButton();}).OnTrue(
-    m_upperSubsystem.AutoShootCommand(-5)
-  );
+  //   frc2::Trigger([this] {return m_joystick.GetBButton();}).OnTrue(
+  //   m_upperSubsystem.AutoShootCommand(-5)
+  // );
 
 }
 
